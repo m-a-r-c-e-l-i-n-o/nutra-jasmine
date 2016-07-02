@@ -28,7 +28,7 @@
   "homepage": "https://github.com/m-a-r-c-e-l-i-n-o/nutra-jasmine#readme",
   "devDependencies": {
     "babel-cli": "^6.9.0",
-    "babel-preset-es2016": "^6.0.11"
+    "babel-preset-es2016-node5": "^1.1.2"
   },
   "dependencies": {
     "jasmine": "^2.4.1"
