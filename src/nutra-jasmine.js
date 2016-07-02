@@ -11,6 +11,7 @@ const framework = (events, system, opts) => {
                 resolve()
             })
         })
+        system.callbacks.onFrameworkExecution(jasmineRunner)
         jasmineRunner.execute()
         return promise
     }
