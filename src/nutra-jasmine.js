@@ -8,11 +8,15 @@ const framework = (events, system, opts) => {
     events.onExit = () => {
         const promise = new Promise((resolve, reject) => {
             jasmineRunner.onComplete(function (passed) {
-                resolve()
+                if (passed) {
+                    resolve(true)
+                } else {
+                    reject(false)
+                }
             })
+            system.callbacks.onFrameworkExecution(jasmineRunner)
+            jasmineRunner.execute()
         })
-        system.callbacks.onFrameworkExecution(jasmineRunner)
-        jasmineRunner.execute()
         return promise
     }
 }
